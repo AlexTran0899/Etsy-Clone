@@ -14,6 +14,8 @@ exports.up = async (knex) => {
                 .onUpdate('cascade')
                 .notNullable()
             messages.string('text', 500).notNullable()
+            messages.timestamps(false, true)
+
         })
 }
 
