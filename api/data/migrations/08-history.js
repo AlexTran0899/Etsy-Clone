@@ -1,24 +1,21 @@
 exports.up = async (knex) => {
     await knex.schema
-        .createTable('messages', (messages) => {
-            messages.integer('from')
+        .createTable('history', (history) => {
+            history.integer('user_id')
                 .references('user_id')
                 .inTable('users')
                 .onDelete('cascade')
                 .onUpdate('cascade')
                 .notNullable()
-            messages.integer('to')
-                .references('user_id')
-                .inTable('users')
+            history.integer('item_id')
+                .references('item_id')
+                .inTable('items')
                 .onDelete('cascade')
                 .onUpdate('cascade')
                 .notNullable()
-            messages.string('text', 500).notNullable()
-            messages.timestamps(false, true)
-
+            history.timestamps(false, true)
         })
 }
-
 exports.down = async (knex) => {
-    await knex.schema.dropTableIfExists('item_option')
+    await knex.schema.dropTableIfExists('history')
 }
