@@ -12,6 +12,7 @@ exports.up = async (knex) => {
         items.string('item_description', 1000).notNullable()
         items.integer('price', 200).notNullable()
         items.integer('catergory').notNullable()
+        items.integer('quantity').defaultTo(1)
       })
   }
   

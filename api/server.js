@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-const path = require('path')
 const server = express()
 const Auth = require('./Auth/auth-router')
 
