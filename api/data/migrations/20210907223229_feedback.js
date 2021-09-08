@@ -17,7 +17,6 @@ exports.up = async (knex) => {
           feedback.string('comments', 200).notNullable()
       })
   }
-  
   exports.down = async (knex) => {
     await knex.schema.dropTableIfExists('item_option')
   }

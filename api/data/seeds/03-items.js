@@ -18,6 +18,5 @@ exports.seed = function (knex) {
     { user_id: 4, item_title: 'home made honey', item_description: lorem.generateSentences(5), price: 900 ,catergory: 1  },
     { user_id: 1, item_title: 'blue oyster', item_description: lorem.generateSentences(5),price: 2000 ,catergory: 1 },
     { user_id: 1, item_title: 'pink oyster', item_description: lorem.generateSentences(5),price: 2000,catergory: 1  },
-
   ]);
 };
