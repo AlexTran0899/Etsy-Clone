@@ -14,6 +14,7 @@ exports.up = async (knex) => {
                 .onUpdate('cascade')
                 .notNullable()
             history.timestamps(false, true)
+            history.boolean('favourite')
         })
 }
 exports.down = async (knex) => {

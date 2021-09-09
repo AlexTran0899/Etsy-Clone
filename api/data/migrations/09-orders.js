@@ -1,6 +1,6 @@
 exports.up = async (knex) => {
     await knex.schema
-        .createTable('order', (order) => {
+        .createTable('orders', (order) => {
             order.integer('user_id')
                 .references('user_id')
                 .inTable('users')
@@ -22,8 +22,9 @@ exports.up = async (knex) => {
             order.string('first_name')
             order.string('last_name')
             order.string('shipping_speed')
+            order.integer('status')
         })
 }
 exports.down = async (knex) => {
-    await knex.schema.dropTableIfExists('history')
+    await knex.schema.dropTableIfExists('orders')
 }
