@@ -43,4 +43,10 @@ router.post('/login', (req, res, next) => {
     .catch(next)
 });
 
+router.put('/update',(req, res, next) => {
+  router.update(req.body)
+  .then(data => res.json(data))
+  .catch(next)
+})
+
 module.exports = router;
