@@ -6,6 +6,7 @@ const server = express()
 const Auth = require('./Auth/auth-router')
 const items = require('./Items/items_router')
 const upload = require('./upload_image/upload_image')
+const catagory = require('./catagory/catagory_router')
 
 server.use(express.json())
 server.use(helmet())
@@ -14,6 +15,7 @@ server.use(cors())
 server.use('/api/auth', Auth )
 server.use('/api/items', items )
 server.use('/api/upload', upload )
+server.use('/api/catagory', catagory )
 
 server.use((err, req, res, next) =>{
     res.status(500).json({
