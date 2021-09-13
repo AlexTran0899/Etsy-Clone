@@ -3,6 +3,9 @@ exports.up = async (knex) => {
         .createTable('category', (category) => {
             category.increments('category_id')
             category.string('category_name')
+            category.string('editorpickImg')
+            category.string('editorpickimgTitle')
+
         })
 }
 exports.down = async (knex) => {
